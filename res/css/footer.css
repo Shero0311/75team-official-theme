@@ -1,0 +1,97 @@
+#footer {
+  width: 100%;
+  line-height: 1.8;
+  padding: 1.7em;
+  border-top: 1px solid #fff;
+  font-size: 0.9em;
+  background: #000;
+  color: #fff; }
+  #footer ul {
+    display: flex;
+    justify-content: space-between; }
+  @media screen and (min-width: 1200px) {
+    #footer ul {
+      width: 1200px;
+      margin: 2em auto 1.7em; }
+    #footer li {
+      flex: 1;
+      padding: 24px 40px;
+      border-right: 1px solid rgba(151, 151, 151, 0.6); } }
+  @media screen and (max-width: 1200px) {
+    #footer ul {
+      justify-content: center; }
+      #footer ul li.product-list,
+      #footer ul li.account,
+      #footer ul li.search {
+        display: none; }
+      #footer ul li.desc {
+        display: block;
+        border: none;
+        text-align: center; } }
+  #footer li:last-child {
+    border: none; }
+  #footer .desc {
+    color: rgba(255, 255, 255, 0.5); }
+    #footer .desc img {
+      width: 6em; }
+    #footer .desc-year {
+      font-size: 14px; }
+    #footer .desc-tag {
+      font-size: 12px; }
+  #footer .product-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap; }
+    #footer .product-list a {
+      width: 13em; }
+  #footer li.account {
+    width: 70%;
+    padding: 0;
+    margin-left: -1.7em;
+    line-height: 126px;
+    text-align: center; }
+    #footer li.account a {
+      margin-left: 1.7em; }
+  #footer .logo {
+    width: 127px; }
+  #footer .product-list a {
+    display: block;
+    width: 50%;
+    float: left;
+    color: #fff; }
+  #footer .account img {
+    width: 32px;
+    vertical-align: middle; }
+  #footer .wechat {
+    position: relative; }
+    #footer .wechat:hover .qrcode {
+      display: block; }
+    #footer .wechat .qrcode {
+      position: absolute;
+      bottom: 40px;
+      left: -30px;
+      width: 90px;
+      height: 115px;
+      display: none; }
+  #footer .search a {
+    color: #fff; }
+  #footer .search input {
+    width: 17em;
+    height: 35px;
+    padding-left: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 7px;
+    color: #B8B8B8;
+    border: 1px solid rgba(151, 151, 151, 0.3); }
+  #footer .search .so {
+    display: block;
+    margin-bottom: 10px; }
+  #footer .search-btn {
+    display: inline-block;
+    height: 35px;
+    line-height: 34px;
+    padding: 0 .6em;
+    background: #383838;
+    border-radius: 5px; }
+
+/*# sourceMappingURL=footer.css.map */

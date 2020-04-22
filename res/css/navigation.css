@@ -1,0 +1,24 @@
+#navigation {
+    /* position: fixed;
+  left: 0;
+  top: 0; */
+    overflow: auto;
+    z-index: 1;
+    -webkit-overflow-scrolling: touch;
+    background: #000;
+}
+#navigation li,
+#navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#navigation ul {
+}
+#navigation li {
+    margin-right: 20px;
+    line-height: 80px;
+}
+#navigation li a {
+    color: #fff;
+}

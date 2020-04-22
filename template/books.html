@@ -1,0 +1,31 @@
+{% extends '../layout.html' %} {% extends '../post.html' %} {% block title -%}
+{{page.title}} - {{options.title}} {%-endblock %} {% block head %}
+<link
+  rel="stylesheet"
+  href="/theme/{{options.theme}}/res/css/books.css"
+  type="text/css"
+  data-ls="css_firekylin"
+/>
+{% endblock %}
+<!-- content -->
+{% block content %} {{ page.content|safe }}
+<div id="books">
+  <div id="banner-top">
+    <h1>奇舞团出版的图书</h1>
+  </div>
+  <ul class="book-list"></ul>
+</div>
+<script src="//lib.baomitu.com/underscore.js/1.8.3/underscore-min.js"></script>
+<script>
+  var bookList = window.published;
+  var bookItemEl = _.template(`
+    <% bookList.forEach(function(item) { %>
+      <li class="book-item">
+        <img src="<%=item.poster%>">
+        <h2>《<%=item.title%>》</h2>
+      </li>
+    <% }) %>`);
+  var ele = document.querySelector('.book-list');
+  ele.innerHTML = bookItemEl({ bookList: bookList });
+</script>
+{% endblock %}

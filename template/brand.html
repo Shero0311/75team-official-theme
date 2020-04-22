@@ -1,0 +1,37 @@
+{% extends '../layout.html' %} {% extends '../post.html' %} {% block title -%}
+{{page.title}} - {{options.title}} {%-endblock %} {% block head %}
+<link
+  rel="stylesheet"
+  href="/theme/{{options.theme}}/res/css/brand.css"
+  data-ls="css_firekylin"
+/>
+{% endblock %}
+<!-- content -->
+{% block content %} {{ page.content|safe }}
+<div id="brand">
+  <div id="banner-top">
+    <h1>奇舞团产品</h1>
+    <p>奇舞团开源框架与技术品牌</p>
+  </div>
+  <ul class="product-list"></ul>
+</div>
+<script src="//lib.baomitu.com/underscore.js/1.8.3/underscore-min.js"></script>
+<script>
+  var productList = window.productList;
+  var productItemEl = _.template(`
+    <% productList.forEach(function(item) { %>
+      <li class="product-item">
+        <div class="left">
+          <h2><%=item.title%></h2>
+          <p class="desc"><%=item.desc%></p>
+          <a href="<%=item.url%>">查看详情</a>
+        </div>
+        <div class="right">
+          <img src="<%=item.logo%>">
+        </div>
+      </li>
+    <% }) %>`);
+  var ele = document.querySelector('.product-list');
+  ele.innerHTML = productItemEl({ productList: productList });
+</script>
+{% endblock %}

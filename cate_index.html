@@ -1,0 +1,52 @@
+{% extends './layout.html' %} {% block title -%} {% if tag %}标签 {{tag}} - {% elif cate
+%}分类 {{cate}} - {% endif %} {{options.title}} {%- endblock %} {% block head %}
+<link
+  rel="stylesheet"
+  href="/theme/{{options.theme}}/res/css/cate.css"
+  type="text/css"
+  data-ls="css_firekylin"
+/>
+{% endblock %} {% block content %} {%- set curPrentCate=pathname-%} {%- set
+curPrentCateName=cate-%} {% for cate in categories -%} {% for list in cate.children %}
+{%if list.pathname == pathname %} {% set curPrentCate = cate.pathname %} {% set
+curPrentCateName= cate.name%} {%endif%} {% endfor %} {%- endfor %}
+<div id="cate">
+  <div id="banner-top" class="{{curPrentCate}}">
+    {% if curPrentCate=="technology" %}
+    <h1>技术活动一句话概括</h1>
+    {% elif curPrentCate=="culture" %}
+    <h1>文化活动一句话概括</h1>
+    {% else %}
+    <h1>{{cate}}</h1>
+    {% endif %}
+  </div>
+  <div class="cate-list {{curPrentCate}}">
+    <div class="cate-list--box">
+      {% for cate in categories %} {% if cate.pathname==curPrentCate %}{% for child in
+      cate.children %} {% if child.count %}
+      <a
+        class="cate-item {% if child.pathname == pathname  %}active{% endif %}"
+        href="/cate/{{child.pathname}}"
+        data-cate="{{child.name}}"
+        >{{ child.name }}({{ child.count }})</a
+      >
+      {% endif %} {% endfor %} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <div class="post-list-box">
+    <div class="post-list">
+      {% for post in posts %}
+      <a class="post-item" href="/post/{{post.pathname}}">
+        <img class="post-item--img"
+        src={{post.options.featuredImage|default('http://p4.qhimg.com/t01de93f35c8b4fd9e6.jpg')}}>
+        <h3>{{post.title}}</h3>
+        <p class="post-item-time">
+          <img src="https://p3.ssl.qhimg.com/t01d35098bfdebeba99.png" alt="" />
+          <span>{{post.create_time}}</span>
+        </p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% include "./inc/pagination.html" %} {% endblock %}

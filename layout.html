@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <title>{% block title %}{% endblock %}</title>
+    {% block head %}{% endblock %}
+    <link
+      rel="stylesheet"
+      href="/theme/{{options.theme}}/res/css/all.css"
+      type="text/css"
+      data-ls="css_firekylin"
+    />
+  </head>
+
+  <body>
+    {%- set curPrentCate=''-%} {%- set curPrentCateName=''-%} {% for cate in categories
+    -%} {% for list in cate.children %} {% if list.pathname == pathname %} {% set
+    curPrentCate = cate.pathname %} {% set curPrentCateName= cate.name%} {%endif%} {%
+    endfor %} {%- endfor %}
+    <div id="header" class="behavior_1">
+      <span class="nav-icon"></span>
+      <a class="logo" href="/"
+        ><img src="https://p3.ssl.qhimg.com/t012d58bd54c2848357.png" alt=""
+      /></a>
+      <div class="nav-list" style="display: none;">
+        {% for nav in navigation %}
+        <a
+          href="{{nav.url}}"
+          title="{{nav.label}}"
+          class="{% if nav.option == post.cate[0].pathname or nav.option == pathname or nav.option == curPrentCate %}active{% endif %} {% if nav.option == '/' and pathname=='little-fe' %} homeActive {% endif %}"
+        >
+          <span>{{nav.label}}</span>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    <div id="main">
+      {% block content %} {% endblock %}
+    </div>
+    <footer id="footer" class="inner">
+      <ul class="footer-box">
+        <li class="desc">
+          <img src="https://p3.ssl.qhimg.com/t012d58bd54c2848357.png" />
+          <p class="desc-year">
+            &copy; {{ currentYear }} &nbsp;-&nbsp;{{options.title}}
+          </p>
+          <p class="desc-tag">技术、创新、合作、分享、开放、欢乐</p>
+        </li>
+        <li class="product-list">
+          <a href="https://study.qiyun.360.cn" target="_blank">奇舞学院</a>
+          <a href="https://www.360.cn" target="_blank">360官网</a>
+          <a href="http://zcfy.cc" target="_blank">众成翻译</a>
+          <a href="https://ppt.baomitu.com/" target="_blank">声享</a>
+          <a href="https://spritejs.org" target="_blank">SprteJS</a>
+          <a href="https://arena.360.cn" target="_blank">即视</a>
+        </li>
+        <li class="account">
+          <a class="wechat" href="">
+            <img src="https://p0.ssl.qhimg.com/t01d7ba4783e6c74998.png" />
+            <img class="qrcode" src="https://p4.ssl.qhimg.com/t015aea081567ce3eea.png" />
+          </a>
+          <a class="weibo" href="https://weibo.com/75teams" target="_blank">
+            <img src="https://p2.ssl.qhimg.com/t01efe758cbed2c91fa.png" />
+          </a>
+          <a class="git" href="https://github.com/spritejs" target="_blank">
+            <img src="https://p3.ssl.qhimg.com/t01ae1bb805e407d45c.png" alt="" />
+          </a>
+        </li>
+        <li class="search">
+          <a class="so" href="so.com">360搜索</a>
+          <input type="text" placeholder="奇舞学院闹事情" />
+          <a class="search-btn" href="so.com">搜索</a>
+        </li>
+      </ul>
+    </footer>
+    <script
+      src="/theme/{{options.theme}}/res/js/firekylin.js"
+      data-ls="js_firekylin"
+    ></script>
+    <script src="//lib.baomitu.com/underscore.js/1.8.3/underscore-min.js"></script>
+
+    <script>
+      var footerProducts = window.footerProducts;
+      var footerLinkEl = _.template(`
+        <% footerProducts.forEach(function(item) { %>
+          <a href="<%=item.url%>" target="_blank"><%=item.name%></a>
+        <% }) %>
+      `);
+      var productEl = document.querySelector('#footer .product-list');
+      productEl.innerHTML = footerLinkEl({ footerProducts: footerProducts });
+
+      document.querySelector('.nav-icon').addEventListener('click', function () {
+        document.querySelector('.nav-list').style.display =
+          document.querySelector('.nav-list').style.display === 'none'
+            ? 'block'
+            : 'none';
+      });
+      if (window.location.pathname === '/') {
+        document.querySelector('#header').classList.toggle('header-color', true);
+      } else {
+        document.querySelector('#header').classList.toggle('header-color', false);
+        var io = new IntersectionObserver(
+          function (entries) {
+            document
+              .querySelector('#header')
+              .setAttribute(
+                'style',
+                `background-color: rgba(0, 0, 0, ${
+                  1 - entries[0].intersectionRatio
+                });transition: .3s;`,
+              );
+          },
+          { threshold: [0, 0.25, 0.5, 0.75, 1] },
+        );
+        var element = document.querySelector('#banner-top');
+        io.observe(element); // 开始观察
+      }
+    </script>
+    {% if options.analyze_code %} {{options.analyze_code | safe}} {% endif %} {% if
+    themeConfig.customJS %}
+    <script>
+      {
+        {
+          themeConfig.customJS | safe;
+        }
+      }
+    </script>
+    {% endif %}
+  </body>
+</html>

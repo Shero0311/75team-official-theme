@@ -1,0 +1,21 @@
+{% extends '../layout.html' %} {% extends '../post.html' %} {% block title -%}
+{{page.title}} - {{options.title}} {%-endblock %} {% block head %}
+<link
+  rel="stylesheet"
+  href="/theme/{{options.theme}}/res/css/employ.css"
+  type="text/css"
+  data-ls="css_firekylin"
+/>
+{% endblock %}
+<!-- content -->
+{% block content %}
+<div id="employ">
+  <div id="banner-top">
+    <h1>奇舞团欢迎你</h1>
+    <p>快来加入我们吧，让工作快乐一点</p>
+  </div>
+  <article class="article article-employ">
+    <div class="cont">{{page.content | safe}}</div>
+  </article>
+</div>
+{% endblock %}

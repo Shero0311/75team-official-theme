@@ -1,0 +1,121 @@
+#brand {
+  width: 100%;
+  min-height: 100%;
+  position: relative; }
+  #brand #banner-top {
+    background-color: #3e3e3e; }
+    #brand #banner-top::before, #brand #banner-top::after {
+      content: '';
+      position: absolute;
+      border-radius: 100%;
+      background-color: rgba(255, 255, 255, 0.09); }
+    #brand #banner-top::before {
+      width: 45%;
+      padding-top: 45%;
+      left: 20%; }
+    #brand #banner-top::after {
+      width: 15%;
+      padding-top: 15%;
+      left: 50%; }
+    @media screen and (min-width: 1200px) {
+      #brand #banner-top::before {
+        bottom: 1.6em; }
+      #brand #banner-top::after {
+        width: 20%;
+        padding-top: 20%;
+        bottom: -58%;
+        left: 55%; } }
+    @media screen and (max-width: 1200px) {
+      #brand #banner-top::before {
+        top: -4em; }
+      #brand #banner-top::after {
+        bottom: -20%; } }
+    #brand #banner-top h1 {
+      padding-top: 2em;
+      font-size: 1em;
+      font-family: PingFangSC-Semibold, PingFang SC;
+      font-weight: 600;
+      line-height: 2.2em; }
+    #brand #banner-top p {
+      font-size: 0.5em;
+      font-family: PingFangHK-Semibold, PingFangHK;
+      font-weight: 600; }
+  #brand .product-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0 auto; }
+  @media screen and (min-width: 1200px) {
+    #brand {
+      background-color: #f9f9f9; }
+      #brand .product-list {
+        width: 1000px;
+        padding: 2em 0 3em;
+        font-size: 16px; }
+        #brand .product-list .product-item {
+          width: 49%;
+          height: 200px;
+          margin-top: 2%;
+          margin-right: 2%;
+          background: #fff;
+          border-radius: 10px;
+          border: 1px solid #ddd;
+          transition-duration: 0.3s, 0.2s; }
+          #brand .product-list .product-item:hover {
+            border-radius: 8px;
+            box-shadow: 0px 8px 33px -12px rgba(0, 0, 0, 0.2);
+            transition-timing-function: ease-in; }
+          #brand .product-list .product-item:nth-child(2n + 2) {
+            margin-right: 0; }
+        #brand .product-list .right {
+          width: 6em;
+          height: 6em;
+          padding: 0.5em 0;
+          display: flex;
+          align-items: center;
+          border: 1px solid rgba(151, 151, 151, 0.2);
+          justify-content: center; } }
+  @media screen and (max-width: 1200px) {
+    #brand .product-list {
+      font-size: 14px; }
+      #brand .product-list .product-item {
+        width: 100%;
+        padding: 1.3em 2em 1.7em; }
+        #brand .product-list .product-item:nth-child(2n) {
+          background-color: #f3f3f3; }
+        #brand .product-list .product-item a {
+          padding: 0.35em 1em;
+          background: rgba(53, 123, 248, 0.1);
+          border-radius: 1em;
+          font-family: PingFangSC-Semibold, PingFang SC;
+          font-weight: 600; }
+        #brand .product-list .product-item .right {
+          width: 7em;
+          height: 7em; } }
+  #brand .product-item {
+    display: flex;
+    align-items: center;
+    padding: 1em 1.5em; }
+  #brand .product-item h2 {
+    font-size: 1.75em;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-weight: 600;
+    color: #000; }
+  #brand .product-item .desc {
+    margin: 1em 0;
+    font-weight: 400;
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5em; }
+  #brand .product-item a {
+    color: #357bf8;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-size: 1em; }
+  #brand .right {
+    margin-left: 1em;
+    flex-shrink: 0;
+    position: relative; }
+    #brand .right img {
+      max-width: 85%; }
+
+/*# sourceMappingURL=brand.css.map */

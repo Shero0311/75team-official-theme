@@ -1,0 +1,254 @@
+{% extends '../layout.html' %}
+<!-- {% block title -%} {{page.title}} - {{options.title}}{%-endblock %}-->
+{% block head %}
+<link
+  rel="stylesheet"
+  href="/theme/{{options.theme}}/res/css/index.css"
+  type="text/css"
+  data-ls="css_firekylin"
+/>
+<link
+  crossorigin="anonymous"
+  integrity="sha384-K6LrEaceM4QP87RzJ7R4CDXcFN4cFW/A5Q7/fEp/92c2WV+woVw9S9zKDO23sNS+"
+  href="https://lib.baomitu.com/Swiper/4.5.0/css/swiper.min.css"
+  rel="stylesheet"
+/>
+<script
+  crossorigin="anonymous"
+  integrity="sha384-fOtis9P3S4B2asdoye1/YBpXMaRmuXu925gZhfQA/gnU3dLnftD8zvpk/lhP0YSG"
+  src="https://lib.baomitu.com/Swiper/4.5.0/js/swiper.min.js"
+></script>
+<script src="/theme/{{options.theme}}/res/js/swiper.js"></script>
+{% endblock %} {% block content %} {{ page.content|safe }}
+<div id="index">
+  <div id="top">
+    <div class="swiper-container swiper-container-banner">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="banner">
+            <img class="banner-img" src="http://p3.qhimg.com/t0161e7bed74d7987ff.png" />
+            <div class="banner-info">
+              <p class="banner-title--en">Join us and make you a little happier.</p>
+              <h2 class="banner-title">欢迎加入奇舞团</h2>
+              <h2 class="banner-slogan">360大前端团队</h2>
+              <a class="banner-website" href="https://study.qiyun.360.cn" target="_blank"
+                >GO <img src="http://p5.qhimg.com/t016be0fd203664f785.png"
+              /></a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="banner">
+            <img class="banner-img" src="http://p3.qhimg.com/t0161e7bed74d7987ff.png" />
+            <div class="banner-info">
+              <p class="banner-title--en">Join us and make you a little happier.</p>
+              <h2 class="banner-title">欢迎加入奇舞团</h2>
+              <h2 class="banner-slogan">360大前端团队</h2>
+              <a class="banner-website" href="https://study.qiyun.360.cn"
+                >GO <img src="http://p5.qhimg.com/t016be0fd203664f785.png"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="swiper-button-prev swiper-banner-btn swiper-banner-btn-prev"></div>
+    <div class="swiper-button-next swiper-banner-btn swiper-banner-btn-next"></div>
+  </div>
+
+  <div id="container">
+    {% for cate in categories %}
+    <!-- 自研品牌-->
+    {% if cate.pathname =="brand" %}
+    <div class="title">
+      <h1>Independent Brand</h1>
+      <h2>
+        <a href="/page/{{cate.pathname}}">
+          <span>{{ cate.name}}</span>
+          <img src="https://p2.ssl.qhimg.com/t017b9ba99fb40e5fdf.png" />
+        </a>
+      </h2>
+    </div>
+    <div class="module-brand">
+      <div class="swiper-container swiper-container-brand">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="swiper-button-prev swiper-brand-btn swiper-brand-btn-prev"></div>
+      <div class="swiper-button-next swiper-brand-btn swiper-brand-btn-next"></div>
+    </div>
+    {% endif %} {% endfor %}
+    <!-- 技术活动和文化活动抽离公共item -->
+    {% macro techList(featuredImage, title, summary ,path, create_time) %}
+    <a class="list-item" href="{%if path%}post/{{path}}{%else%}/{%endif%}">
+      {%if featuredImage == ''%} {%set featuredImage = null%} {%endif%} <img
+      class="list-img"
+      src={{featuredImage|default('http://p4.qhimg.com/t01de93f35c8b4fd9e6.jpg')}}>
+      <div class="list-info">
+        <h3>{{title|safe}}</h3>
+        <div class="list-desc">{{summary}}</div>
+        <p class="list-time">
+          <img src="https://p3.ssl.qhimg.com/t01d35098bfdebeba99.png" alt="" />
+          <span>{{create_time}}</span>
+        </p>
+      </div>
+    </a>
+    {%- endmacro %}
+    <!-- 技术活动 -->
+    {% for cate in categories %} {% if cate.pathname =="technology" %}
+    <div class="title">
+      <h1>Technology Activity</h1>
+      <h2>
+        <a href="/cate/{{cate.pathname}}">
+          <span>{{ cate.name}}</span>
+          <img src="https://p2.ssl.qhimg.com/t017b9ba99fb40e5fdf.png" />
+        </a>
+      </h2>
+    </div>
+    <div class="module-tech list-box">
+      {% set actlist = cate.posts %}{% set actlen = cate.posts.length %} {% for activity
+      in actlist -%}{% if loop.index < 5%}
+      {{techList(JSON.parse(activity.options).featuredImage, activity.title,
+      activity.summary, activity.pathname, activity.create_time)}}{%endif%} {%- endfor %}
+    </div>
+    {% endif %} {% endfor %}
+    <!-- 文化活动 -->
+    {% for cate in categories %} {% if cate.pathname =="culture" %}
+    <div class="title">
+      <h1>Culture Activity</h1>
+      <h2>
+        <a href="/cate/{{cate.pathname}}">
+          <span>{{ cate.name }}</span>
+          <img src="https://p2.ssl.qhimg.com/t017b9ba99fb40e5fdf.png" />
+        </a>
+      </h2>
+    </div>
+    <div class="module module-cul">
+      <div class="list-box">
+        {% set actlist = cate.posts %} {% for activity in actlist -%}{% if loop.index <
+        4%} {{techList(JSON.parse(activity.options).featuredImage, activity.title,
+        activity.summary, activity.pathname, activity.create_time)}} {%endif%}{%- endfor
+        %}
+      </div>
+    </div>
+    {% endif %} {% endfor %}
+    <!-- 团队大佬PC  -->
+    {% for cate in categories %} {% if cate.pathname =="team" %}
+    <div class="title">
+      <h1>Team Member</h1>
+      <h2>
+        <span>{{ cate.name }}</span>
+      </h2>
+    </div>
+    <div class="module-team">
+      <div class="account"></div>
+    </div>
+    {% endif %} {% endfor %}
+    <!-- 关于我们 -->
+    {% for cate in categories %} {% if cate.pathname =="about" %}
+    <div class="title">
+      <h1>About Us</h1>
+      <h2>
+        <a href="/page/{{cate.pathname}}">
+          <span>{{ cate.name }}</span>
+          <img src="https://p2.ssl.qhimg.com/t017b9ba99fb40e5fdf.png" />
+        </a>
+      </h2>
+    </div>
+    <div class="module-about">
+      <img class="gif" src="http://p8.qhimg.com/t01099e71548ef1aa28.gif" alt="" />
+      <!-- <div class="list-box">
+        <div class="img-list">
+          <img src="https://p2.ssl.qhimg.com/t0107bebd1b1958b62c.png" />
+          <img src="https://p4.ssl.qhimg.com/t015aea081567ce3eea.png" />
+          <img src="https://p0.ssl.qhimg.com/t0128bb0368848a7bd2.png" />
+        </div>
+        <ul class="tag-list">
+          <li>技术·创新</li>
+          <li>合作·分享</li>
+          <li>开放·快乐</li>
+        </ul>
+      </div> -->
+      {% endif %}{% endfor %}
+    </div>
+  </div>
+</div>
+<script src="//lib.baomitu.com/underscore.js/1.8.3/underscore-min.js"></script>
+<script>
+  var inBrand = window.independentBrand;
+  var brandItemEl = _.template(`
+    <% inBrand.forEach(function(item) { %>
+      <div class="swiper-slide">
+        <div class="brand-bg-box">
+          <div class="brand-info-box">
+            <div class="brand-info-left">
+              <img class="brand-logo" src="<%=item.logo%>" />
+              <h1 class="brand-title"><%=item.title%></h1>
+              <p class="brand-slogan"><%=item.slogan%></p>
+              <a class="brand-website" href="<%=item.url%>">查看详情</a>
+            </div>
+            <div class="brand-info-right">
+              <img src="<%=item.picture%>" />
+            </div>
+          </div>
+        </div>
+      </div>
+    <% }) %>`);
+  var brandEl = document.querySelector('.module-brand .swiper-wrapper');
+  brandEl.innerHTML = brandItemEl({ inBrand: inBrand });
+
+  var userAgentType = /(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)
+    ? 'mobile'
+    : 'pc';
+
+  var inTeam = window.inTeam;
+  var teamItemEl = _.template(`
+    <% if(userAgentType === 'pc') { %>
+      <ul class="list-box">
+    <% } else { %>
+      <div class="swiper-container module-team-mobile">
+      <div class="swiper-wrapper list-box">
+    <% } %>
+    <% inTeam.forEach(function(item) { %>
+      <% if(userAgentType === 'pc') { %>
+        <li class="list-item">
+      <% } else { %>
+        <div class="swiper-slide list-item">
+      <% } %>
+          <img class="avatar" src="<%=item.avatar%>" />
+          <p class="name"><%=item.name%></p>
+          <p class="team-title"><%=item.title%></p>
+          <p class="desc"><%=item.desc%></p>
+          <div class="account">
+            <% if(item.wechat) { %>
+              <a href="<%=item.wechat%>" target="_blank">
+                <img src="https://p0.ssl.qhimg.com/t0155c4c89962473473.png" />
+              </a>
+            <% } %>
+            <% if(item.weibo) { %>
+              <a href="<%=item.weibo%>" target="_blank">
+                <img src="https://p3.ssl.qhimg.com/t017dcaa85517b46a21.png" />
+              </a>
+            <% } %> 
+            <a href="<%=item.github ? item.github : 'https://github.com/spritejs'%>" target="_blank">
+              <img src="https://p0.ssl.qhimg.com/t0107837f647b7eff89.png" />
+            </a>
+          </div>
+        <% if(userAgentType === 'pc') { %>
+        </li>
+        <% } else { %>
+          </div>
+        <% } %>
+      <% }) %>
+      <% if(userAgentType === 'pc') { %>
+        </ul>
+      <% } else { %>
+          </div>
+        </div>
+      <% } %>
+  `);
+  var teamEl = document.querySelector('.module-team');
+  teamEl.innerHTML = teamItemEl({ inTeam: inTeam });
+</script>
+{% endblock %}

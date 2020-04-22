@@ -1,0 +1,14 @@
+#culture {
+  width: 100%;
+  position: relative;
+}
+#culture #banner-top {
+  background: url(https://p1.ssl.qhimg.com/t013b855aa923dc4834.png);
+}
+#culture #banner-top h1 {
+  padding-top: 90px;
+  font-size: 40px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  line-height: 2.2;
+}

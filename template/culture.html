@@ -1,0 +1,29 @@
+{% extends '../layout.html' %} {% extends '../post.html' %} {% block title -%}
+{{page.title}} - {{options.title}} {%-endblock %} {% block head %}
+<link
+  rel="stylesheet"
+  href="/theme/{{options.theme}}/res/css/tech.css"
+  type="text/css"
+  data-ls="css_firekylin"
+/>
+{% endblock %}
+<!-- content -->
+{% block content %}
+<div id="culture">
+  <div id="banner-top">
+    <h1>技术活动一句话概括</h1>
+    {% for cate in categories %} {% if cate.pathname=='technology' %}{% for child in
+    cate.children %}
+
+    <a href="/cate/{{child.pathname}}" data-cate="{{child.name}}"
+      >{{ child.name }}({{ child.count }})</a
+    >
+    {% endfor %} {% endif %} {% endfor %}
+    <p>快来加入我们吧，让工作快乐一点</p>
+  </div>
+  <!-- {{JSON.stringify(categories)}} -->
+  <article class="article article-employ">
+    <div class="cont">{{page.content | safe}}</div>
+  </article>
+</div>
+{% endblock %}

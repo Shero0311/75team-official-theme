@@ -1,0 +1,36 @@
+{% extends './layout.html' %} {% block title -%} {% if tag %}标签 {{tag}} - {% elif cate
+%}分类 {{cate}} - {% endif %} {{options.title}} {%- endblock %} {% block head %}
+<link
+  rel="stylesheet"
+  href="/theme/{{options.theme}}/res/css/cate.css"
+  type="text/css"
+  data-ls="css_firekylin"
+/>
+{% endblock %} {% block content %}
+<div id="cate">
+  <div id="banner-top">
+    <h1>技术活动一句话概括</h1>
+    <div class="cate-list">
+      {% for cate in categories %} {% if cate.pathname=='technology' %}{% for child in
+      cate.children %}
+      <a
+        class="cate-item {% if child.pathname == pathname %}active{% endif %}"
+        href="/cate/{{child.pathname}}"
+        data-cate="{{child.name}}"
+        >{{ child.name }}({{ child.count }})</a
+      >
+      {% endfor %} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <div class="post-list">
+    {% for post in posts %}
+    <a class="post-item" href="/post/{{post.pathname}}">
+      <img class="post-item--img"
+      src={{post.options.featuredImage|default('http://p4.qhimg.com/t01de93f35c8b4fd9e6.jpg')}}>
+      <h3>{{post.title}}</h3>
+      <span>{{post.create_time}}</span>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% include "./inc/pagination.html" %} {% endblock %}

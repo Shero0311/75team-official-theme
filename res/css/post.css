@@ -1,0 +1,58 @@
+@media screen and (min-width: 1200px) {
+  #page-post {
+    padding: 7em 0 3em;
+    background-color: #f9f9f9; } }
+#page-post .post {
+  margin: 0 auto;
+  padding: 0 4em;
+  overflow: hidden;
+  white-space: pre-wrap; }
+  #page-post .post .title {
+    color: #202020;
+    font-family: STSongti-SC-Black, STSongti-SC;
+    font-weight: 900;
+    line-height: 1.7; }
+  @media screen and (min-width: 1200px) {
+    #page-post .post {
+      width: 900px;
+      font-size: 16px;
+      background-color: #fff;
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+      border-radius: 5px; }
+      #page-post .post .title {
+        font-size: 2.5em; } }
+  @media screen and (max-width: 1200px) {
+    #page-post .post {
+      width: 100%;
+      margin-top: 1.5em;
+      font-size: 14px; }
+      #page-post .post .title {
+        font-size: 2em; } }
+  #page-post .post .user,
+  #page-post .post .date {
+    display: block;
+    float: left;
+    margin-right: 20px;
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #666666; }
+  #page-post .post img {
+    max-width: 100%;
+    display: block;
+    margin: 1em auto; }
+#page-post pre code {
+  font-family: Operator Mono, Consolas, Monaco, Menlo, monospace;
+  font-size: 12px;
+  overflow-x: auto;
+  padding: 16px;
+  background: #1e1e1e;
+  color: #dcdcdc;
+  display: -webkit-box; }
+#page-post .toc {
+  display: none; }
+
+#header {
+  background-color: #000; }
+
+/*# sourceMappingURL=post.css.map */
