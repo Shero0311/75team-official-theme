@@ -26,7 +26,7 @@
       <a class="logo" href="/"
         ><img src="https://p3.ssl.qhimg.com/t012d58bd54c2848357.png" alt=""
       /></a>
-      <div class="nav-list" style="display: none;">
+      <div class="nav-list">
         {% for nav in navigation %}
         <a
           href="{{nav.url}}"
@@ -85,34 +85,37 @@
 
     <script>
       var footerProducts = window.footerProducts;
-      var footerLinkEl = _.template(`
+      if (footerProducts) {
+        var footerLinkEl = _.template(`
         <% footerProducts.forEach(function(item) { %>
           <a href="<%=item.url%>" target="_blank"><%=item.name%></a>
         <% }) %>
       `);
-      var productEl = document.querySelector('#footer .product-list');
-      productEl.innerHTML = footerLinkEl({ footerProducts: footerProducts });
-
+        var productEl = document.querySelector('#footer .product-list');
+        productEl.innerHTML = footerLinkEl({ footerProducts: footerProducts });
+      }
+      var navList = document.querySelector('.nav-list');
       document.querySelector('.nav-icon').addEventListener('click', function () {
-        document.querySelector('.nav-list').style.display =
-          document.querySelector('.nav-list').style.display === 'none'
+        navList.style.display =
+          navList.style.display === 'none' ||
+          window.getComputedStyle(navList, null).display === 'none'
             ? 'block'
             : 'none';
       });
+
+      var headerEl = document.querySelector('#header');
       if (window.location.pathname === '/') {
-        document.querySelector('#header').classList.toggle('header-color', true);
+        headerEl.classList.toggle('header-color', true);
       } else {
-        document.querySelector('#header').classList.toggle('header-color', false);
+        headerEl.classList.toggle('header-color', false);
         var io = new IntersectionObserver(
           function (entries) {
-            document
-              .querySelector('#header')
-              .setAttribute(
-                'style',
-                `background-color: rgba(0, 0, 0, ${
-                  1 - entries[0].intersectionRatio
-                });transition: .3s;`,
-              );
+            headerEl.setAttribute(
+              'style',
+              `background-color: rgba(0, 0, 0, ${
+                1 - entries[0].intersectionRatio
+              });transition: .3s;`,
+            );
           },
           { threshold: [0, 0.25, 0.5, 0.75, 1] },
         );
