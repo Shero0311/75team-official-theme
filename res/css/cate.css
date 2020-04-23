@@ -4,6 +4,7 @@
   min-height: 100%;
   background-color: #f9f9f9; }
   #cate #banner-top {
+    overflow: hidden;
     background-color: #3f7fd5; }
     #cate #banner-top::before, #cate #banner-top::after {
       content: '';
@@ -13,7 +14,7 @@
     #cate #banner-top::before {
       width: 45%;
       padding-top: 45%;
-      left: 20%; }
+      left: 16%; }
     #cate #banner-top::after {
       width: 15%;
       padding-top: 15%;

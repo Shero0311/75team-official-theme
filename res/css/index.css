@@ -10,9 +10,10 @@
       #index #top .banner {
         font-size: 28px; }
         #index #top .banner-img {
-          right: 15%; }
+          right: 15%;
+          top: -1em; }
         #index #top .banner-info {
-          width: 950px; } }
+          width: 1000px; } }
   @media screen and (max-width: 1200px) {
     #index #top {
       height: 17em;
@@ -30,8 +31,7 @@
     background-size: 100% 100%; }
     #index #top .banner-img {
       height: 100%;
-      position: absolute;
-      top: 0.7em; }
+      position: absolute; }
     #index #top .banner-info {
       height: 100%;
       margin: 0 auto; }
@@ -124,7 +124,7 @@
     #index .module-brand {
       font-size: 25px; }
       #index .module-brand .brand-info-box {
-        width: 70%; }
+        width: 1000px; }
       #index .module-brand .brand-bg-box {
         padding: 0 6em;
         font-size: 20px; }
