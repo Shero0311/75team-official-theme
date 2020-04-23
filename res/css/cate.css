@@ -36,8 +36,8 @@
       background-color: #3f7fd5; }
     #cate #banner-top.culture {
       background-color: #3eb25d; }
-      #cate #banner-top.culture .cate-list--box .active {
-        color: #3eb25d; }
+    #cate #banner-top.article {
+      background-color: #4caf50; }
     #cate #banner-top h1 {
       font-size: 1em;
       font-family: PingFangSC-Semibold, PingFang SC;
@@ -79,7 +79,9 @@
       #cate .cate-list.technology .cate-list--box .active {
         color: #3f7fd5; }
       #cate .cate-list.culture .cate-list--box .active {
-        color: #3eb25d; } }
+        color: #3eb25d; }
+      #cate .cate-list.article .cate-list--box .active {
+        color: #4caf50; } }
   @media screen and (max-width: 1200px) {
     #cate .cate-list {
       padding-top: 1em;
@@ -101,7 +103,10 @@
         background-color: #3f7fd5; }
       #cate .cate-list.culture .cate-list--box .active {
         color: #fff;
-        background-color: #3eb25d; } }
+        background-color: #3eb25d; }
+      #cate .cate-list.article .cate-list--box .active {
+        color: #fff;
+        background-color: #4caf50; } }
   #cate .post-list {
     display: flex;
     margin: 0 auto;

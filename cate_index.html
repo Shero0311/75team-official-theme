@@ -16,6 +16,8 @@ curPrentCateName= cate.name%} {%endif%} {% endfor %} {%- endfor %}
     <h1>技术活动一句话概括</h1>
     {% elif curPrentCate=="culture" %}
     <h1>文化活动一句话概括</h1>
+    {% elif curPrentCate=="article" %}
+    <h1>这里都是技术文章哦</h1>
     {% else %}
     <h1>{{cate}}</h1>
     {% endif %}
@@ -25,7 +27,7 @@ curPrentCateName= cate.name%} {%endif%} {% endfor %} {%- endfor %}
       {% for cate in categories %} {% if cate.pathname==curPrentCate %}{% for child in
       cate.children %} {% if child.count %}
       <a
-        class="cate-item {% if child.pathname == pathname  %}active{% endif %}"
+        class="cate-item {% if child.pathname == pathname %}active{% endif %}"
         href="/cate/{{child.pathname}}"
         data-cate="{{child.name}}"
         >{{ child.name }}({{ child.count }})</a
