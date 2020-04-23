@@ -82,12 +82,11 @@
       #books .book-list .book-item img {
         max-width: 100%; }
       #books .book-list .book-item h2 {
-        height: calc(100% - 330px);
+        height: 4em;
         display: flex;
         align-items: center;
         justify-content: center;
         line-height: 1.5em;
-        padding: 1em;
         text-align: center;
         font-size: 14px;
         font-family: PingFangSC-Semibold, PingFang SC;
