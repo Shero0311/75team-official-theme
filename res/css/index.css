@@ -11,7 +11,7 @@
         font-size: 28px; }
         #index #top .banner-img {
           right: 15%;
-          top: -1em; }
+          top: -24px; }
         #index #top .banner-info {
           width: 1000px; } }
   @media screen and (max-width: 1200px) {
@@ -166,8 +166,7 @@
     flex-direction: column;
     color: #000; }
   #index .module-brand .brand-info-left .brand-logo {
-    height: 2.5em;
-    margin-left: 5px; }
+    height: 2.5em; }
   #index .module-brand .brand-info-left .brand-title {
     line-height: 1.7em;
     font-weight: 600; }

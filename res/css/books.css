@@ -82,11 +82,16 @@
       #books .book-list .book-item img {
         max-width: 100%; }
       #books .book-list .book-item h2 {
+        height: calc(100% - 330px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1.5em;
+        padding: 1em;
+        text-align: center;
         font-size: 14px;
         font-family: PingFangSC-Semibold, PingFang SC;
         font-weight: 600;
-        color: #000;
-        text-align: center;
-        line-height: 3em; }
+        color: #000; }
 
 /*# sourceMappingURL=books.css.map */
