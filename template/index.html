@@ -87,7 +87,7 @@
       src={{featuredImage|default('http://p4.qhimg.com/t01de93f35c8b4fd9e6.jpg')}}>
       <div class="list-info">
         <h3>{{title|safe}}</h3>
-        <div class="list-desc">{{summary}}</div>
+        <div class="list-desc">{{summary|safe|striptags}}</div>
         <p class="list-time">
           <img src="https://p3.ssl.qhimg.com/t01d35098bfdebeba99.png" alt="" />
           <span>{{create_time}}</span>

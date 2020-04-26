@@ -443,6 +443,8 @@
     padding: 5em 0 3em; }
     #index .module-team .list-box .name {
       font-size: 1.2em; }
+  #index .module-team .swiper-pagination-bullet-active {
+    background: #9b9b9b; }
   #index .module-team .list-item {
     width: 160px;
     position: relative;
