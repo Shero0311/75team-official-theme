@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
   var mySwiperBanner = new Swiper('.swiper-container-banner', {
     loop: true,
     // autoplay: true,
@@ -27,14 +27,41 @@ window.onload = function() {
       prevEl: '.swiper-brand-btn-prev',
     },
   });
+  // var mySwiperTeam = new Swiper('.module-team-mobile', {
+  //   effect: 'coverflow',
+  //   centeredSlides: true,
+  //   slidesPerView: 'auto',
+  //   spaceBetween: 30,
+  //   loop: true,
+  //   coverflowEffect: {
+  //     rotate: 0,
+  //   },
+  // });
   var mySwiperTeam = new Swiper('.module-team-mobile', {
-    effect: 'coverflow',
-    centeredSlides: true,
-    slidesPerView: 'auto',
+    slidesPerView: 5,
     spaceBetween: 30,
-    loop: true,
-    coverflowEffect: {
-      rotate: 0,
+    // init: false,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
     },
   });
 };

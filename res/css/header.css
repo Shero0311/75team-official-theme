@@ -48,8 +48,7 @@
         display: none; }
       #header .nav-list {
         display: flex;
-        justify-content: flex-end;
-        padding-right: 2em; }
+        justify-content: flex-end; }
       #header .nav-list a {
         position: relative;
         margin-right: 1.5em;
@@ -108,9 +107,14 @@
     #header .logo {
       left: 50%;
       transform: translate(-50%, -50%); } }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 900px) {
     #header .logo {
-      left: 50px; } }
+      left: 20px; } }
+  @media screen and (min-width: 901px) {
+    #header .logo {
+      left: 50px; }
+    #header .nav-list {
+      padding-right: 2em; } }
   #header .logo img {
     width: 100%;
     height: 100%; }
