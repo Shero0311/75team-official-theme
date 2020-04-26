@@ -75,7 +75,7 @@
         #index #top .banner-info {
           width: 90%; }
         #index #top .banner-title--en {
-          padding-top: 3em; } }
+          padding-top: 3.5em; } }
   @media screen and (min-width: 1200px) {
     #index #top {
       font-size: 28px; }
@@ -304,13 +304,13 @@
       #index .module-tech .list-item {
         width: 290px;
         height: 163px; } }
-  @media screen and (min-width: 768px) and (max-width: 1200px) {
+  @media screen and (min-width: 768px) and (max-width: 1000px) {
     #index .module-tech {
       width: 700px; }
       #index .module-tech .list-item {
         width: 345px;
         height: 194px; } }
-  @media screen and (min-width: 1201px) {
+  @media screen and (min-width: 1001px) {
     #index .module-tech {
       width: 900px; }
       #index .module-tech .list-item {
@@ -367,7 +367,7 @@
         display: none; }
     #index .module-cul .list-img {
       width: 100%; } }
-  @media screen and (min-width: 768px) and (max-width: 1200px) {
+  @media screen and (min-width: 768px) and (max-width: 1000px) {
     #index .module-cul .list-box {
       width: 700px;
       padding: 3em 0;
@@ -383,13 +383,14 @@
         box-shadow: 0px 13px 38px -9px rgba(0, 0, 0, 0.2);
         transition-timing-function: ease-in; }
     #index .module-cul .list-img {
-      width: 100%;
-      height: 124px; } }
-  @media screen and (min-width: 1201px) {
+      width: 100%; } }
+  @media screen and (min-width: 1001px) {
     #index .module-cul .list-box {
       width: 836px;
       padding: 3.5em 0;
       font-size: 14px; }
+    #index .module-cul .list-item {
+      width: 260px; }
     #index .module-cul .list-img {
       height: 140px; } }
   #index .module-cul .list-item {
