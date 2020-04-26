@@ -37,8 +37,8 @@ window.onload = function () {
   //     rotate: 0,
   //   },
   // });
-  var mySwiperTeam = new Swiper('.module-team-mobile', {
-    slidesPerView: 5,
+  var mySwiperTeam = new Swiper('.module-team .swiper-container', {
+    slidesPerView: 7,
     spaceBetween: 30,
     // init: false,
     pagination: {
@@ -46,6 +46,14 @@ window.onload = function () {
       clickable: true,
     },
     breakpoints: {
+      1800: {
+        slidesPerView: 6,
+        spaceBetween: 30,
+      },
+      1450: {
+        slidesPerView: 5,
+        spaceBetween: 30,
+      },
       1024: {
         slidesPerView: 4,
         spaceBetween: 30,
