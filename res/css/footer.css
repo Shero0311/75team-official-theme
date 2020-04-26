@@ -9,15 +9,7 @@
   #footer ul {
     display: flex;
     justify-content: space-between; }
-  @media screen and (min-width: 1200px) {
-    #footer ul {
-      width: 1200px;
-      margin: 2em auto 1.7em; }
-    #footer li {
-      flex: 1;
-      padding: 24px 40px;
-      border-right: 1px solid rgba(151, 151, 151, 0.6); } }
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 900px) {
     #footer ul {
       justify-content: center; }
       #footer ul li.product-list,
@@ -75,7 +67,6 @@
   #footer .search a {
     color: #fff; }
   #footer .search input {
-    width: 17em;
     height: 35px;
     padding-left: 10px;
     background: rgba(255, 255, 255, 0.12);
@@ -92,5 +83,29 @@
     padding: 0 0.6em;
     background: #383838;
     border-radius: 5px; }
+  @media screen and (min-width: 901px) and (max-width: 1200px) {
+    #footer ul {
+      width: 900px;
+      margin: 2em auto 1.7em; }
+    #footer li {
+      flex: 1;
+      padding: 24px 10px;
+      border-right: 1px solid rgba(151, 151, 151, 0.6); }
+      #footer li .account {
+        margin-left: -1em; }
+        #footer li .account a {
+          margin-left: 1em; }
+      #footer li.search input {
+        width: 15em; } }
+  @media screen and (min-width: 1201px) {
+    #footer ul {
+      width: 1200px;
+      margin: 2em auto 1.7em; }
+    #footer li {
+      flex: 1;
+      padding: 24px 20px;
+      border-right: 1px solid rgba(151, 151, 151, 0.6); }
+      #footer li.search input {
+        width: 17em; } }
 
 /*# sourceMappingURL=footer.css.map */
