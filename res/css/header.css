@@ -125,12 +125,15 @@
   background-size: 100% 100%;
   color: #fff;
   text-align: center; }
-  @media screen and (min-width: 1200px) {
-    #banner-top {
-      font-size: 40px; } }
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 767px) {
     #banner-top {
       font-size: 22px; } }
+  @media screen and (min-width: 768px) and (max-width: 1000px) {
+    #banner-top {
+      font-size: 28px; } }
+  @media screen and (min-width: 1001px) {
+    #banner-top {
+      font-size: 40px; } }
 
 #main .pagination {
   display: none; }
