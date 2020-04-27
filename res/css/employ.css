@@ -5,44 +5,7 @@
   width: 100%;
   position: relative; }
   #employ #banner-top {
-    position: relative;
     background-color: #e96a47; }
-    #employ #banner-top::before, #employ #banner-top::after {
-      content: '';
-      position: absolute;
-      border-radius: 100%;
-      background-color: rgba(255, 255, 255, 0.09); }
-    #employ #banner-top::before {
-      width: 45%;
-      padding-top: 45%;
-      left: 20%; }
-    #employ #banner-top::after {
-      width: 15%;
-      padding-top: 15%;
-      left: 55%; }
-    @media screen and (max-width: 767px) {
-      #employ #banner-top::before {
-        top: -4em; }
-      #employ #banner-top::after {
-        bottom: -20%; } }
-    @media screen and (min-width: 501px) and (max-width: 767px) {
-      #employ #banner-top::before {
-        top: -10em; }
-      #employ #banner-top::after {
-        bottom: -44%; } }
-    @media screen and (min-width: 768px) and (max-width: 800px) {
-      #employ #banner-top::before {
-        top: -8em; }
-      #employ #banner-top::after {
-        bottom: -30%; } }
-    @media screen and (min-width: 801px) {
-      #employ #banner-top::before {
-        bottom: 1.6em; }
-      #employ #banner-top::after {
-        width: 20%;
-        padding-top: 20%;
-        bottom: -58%;
-        left: 55%; } }
     #employ #banner-top h1 {
       padding-top: 2em;
       font-size: 1em;
