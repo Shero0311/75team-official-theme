@@ -19,8 +19,23 @@
     #employ #banner-top::after {
       width: 15%;
       padding-top: 15%;
-      left: 50%; }
-    @media screen and (min-width: 1200px) {
+      left: 55%; }
+    @media screen and (max-width: 767px) {
+      #employ #banner-top::before {
+        top: -4em; }
+      #employ #banner-top::after {
+        bottom: -20%; } }
+    @media screen and (min-width: 501px) and (max-width: 767px) {
+      #employ #banner-top::before {
+        top: -10em; }
+      #employ #banner-top::after {
+        bottom: -44%; } }
+    @media screen and (min-width: 768px) and (max-width: 800px) {
+      #employ #banner-top::before {
+        top: -8em; }
+      #employ #banner-top::after {
+        bottom: -30%; } }
+    @media screen and (min-width: 801px) {
       #employ #banner-top::before {
         bottom: 1.6em; }
       #employ #banner-top::after {
@@ -28,11 +43,6 @@
         padding-top: 20%;
         bottom: -58%;
         left: 55%; } }
-    @media screen and (max-width: 1200px) {
-      #employ #banner-top::before {
-        top: -4em; }
-      #employ #banner-top::after {
-        bottom: -20%; } }
     #employ #banner-top h1 {
       padding-top: 2em;
       font-size: 1em;
@@ -65,33 +75,8 @@
       margin-bottom: 25px; }
     #employ .article .cont {
       line-height: 2; }
-    @media screen and (min-width: 1200px) {
+    @media screen and (max-width: 767px) {
       #employ .article {
-        padding: 4em 0;
-        background-color: #f9f9f9;
-        font-size: 16px; }
-        #employ .article .cont {
-          width: 900px;
-          margin: 0 auto; }
-        #employ .article h1 {
-          margin-top: 1.6em;
-          padding: 0.7em 80px 0;
-          font-size: 1.9em;
-          font-family: STSongti-SC-Black, STSongti-SC;
-          font-weight: 900;
-          line-height: 3em;
-          background-color: #fff; }
-          #employ .article h1:first-child {
-            margin-top: 0; }
-        #employ .article h2,
-        #employ .article p {
-          padding: 0 80px;
-          background-color: #fff; }
-        #employ .article p {
-          padding: 0.7em 80px 1.5em; } }
-    @media screen and (max-width: 1200px) {
-      #employ .article {
-        padding: 1em 2em;
         font-size: 14px; }
         #employ .article h1 {
           margin: 2em 0 1em;
@@ -102,7 +87,46 @@
           border-left: 5px solid #e96a47;
           line-height: 1; }
           #employ .article h1:nth-child(1) {
-            margin-top: 1em; } }
+            margin-top: 1em; }
+        #employ .article .cont section {
+          padding: 1em 2em; }
+          #employ .article .cont section:nth-child(odd) {
+            background-color: #fafafa; }
+          #employ .article .cont section:nth-child(even) {
+            background-color: #fff; }
+          #employ .article .cont section p {
+            color: rgba(0, 0, 0, 0.5); } }
+    @media screen and (min-width: 768px) {
+      #employ .article {
+        background-color: #f9f9f9;
+        font-size: 16px; }
+        #employ .article .cont {
+          margin: 0 auto; }
+          #employ .article .cont section {
+            margin-top: 2.5em;
+            background-color: #fff; }
+            #employ .article .cont section:first-child {
+              margin-top: 0; }
+        #employ .article h1 {
+          font-size: 1.9em;
+          font-family: STSongti-SC-Black, STSongti-SC;
+          font-weight: 900;
+          line-height: 3em; } }
+    @media screen and (min-width: 768px) and (max-width: 1000px) {
+      #employ .article {
+        padding: 3em 0; }
+        #employ .article .cont {
+          width: 700px; }
+          #employ .article .cont section {
+            padding: 1em 3em 2em; } }
+    @media screen and (min-width: 1001px) {
+      #employ .article {
+        padding: 4em 0;
+        background-color: #f9f9f9; }
+        #employ .article .cont {
+          width: 900px; }
+          #employ .article .cont section {
+            padding: 1em 5em 2em; } }
 
 @media screen and (max-width: 420px) {
   .list .list-ul li {
