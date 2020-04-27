@@ -18,8 +18,23 @@
     #cate #banner-top::after {
       width: 15%;
       padding-top: 15%;
-      left: 50%; }
-    @media screen and (min-width: 1200px) {
+      left: 55%; }
+    @media screen and (max-width: 767px) {
+      #cate #banner-top::before {
+        top: -4em; }
+      #cate #banner-top::after {
+        bottom: -20%; } }
+    @media screen and (min-width: 501px) and (max-width: 767px) {
+      #cate #banner-top::before {
+        top: -10em; }
+      #cate #banner-top::after {
+        bottom: -44%; } }
+    @media screen and (min-width: 768px) and (max-width: 800px) {
+      #cate #banner-top::before {
+        top: -8em; }
+      #cate #banner-top::after {
+        bottom: -30%; } }
+    @media screen and (min-width: 801px) {
       #cate #banner-top::before {
         bottom: 1.6em; }
       #cate #banner-top::after {
@@ -27,11 +42,6 @@
         padding-top: 20%;
         bottom: -58%;
         left: 55%; } }
-    @media screen and (max-width: 1200px) {
-      #cate #banner-top::before {
-        top: -4em; }
-      #cate #banner-top::after {
-        bottom: -20%; } }
     #cate #banner-top.technology {
       background-color: #3f7fd5; }
     #cate #banner-top.culture {
@@ -43,16 +53,12 @@
       font-family: PingFangSC-Semibold, PingFang SC;
       font-weight: 600;
       line-height: 2.2em; }
-    @media screen and (min-width: 1200px) {
-      #cate #banner-top {
-        font-size: 40px; }
-        #cate #banner-top h1 {
-          padding-top: 1.7em; } }
-    @media screen and (max-width: 1200px) {
-      #cate #banner-top {
-        font-size: 22px; }
-        #cate #banner-top h1 {
-          padding-top: 2.5em; } }
+    @media screen and (max-width: 767px) {
+      #cate #banner-top h1 {
+        padding-top: 2.5em; } }
+    @media screen and (min-width: 768px) {
+      #cate #banner-top h1 {
+        padding-top: 1.7em; } }
   #cate .cate-list--box {
     display: flex;
     justify-content: center;
@@ -66,23 +72,7 @@
     padding: 0.3em 0.8em;
     border-radius: 0.6em;
     font-size: 1em; }
-  @media screen and (min-width: 1200px) {
-    #cate .cate-list {
-      width: 100%;
-      position: absolute;
-      top: 11em;
-      left: 10px;
-      font-size: 15px; }
-      #cate .cate-list .cate-item {
-        border: 1px solid #fff;
-        color: #fff; }
-      #cate .cate-list.technology .cate-list--box .active {
-        color: #3f7fd5; }
-      #cate .cate-list.culture .cate-list--box .active {
-        color: #3eb25d; }
-      #cate .cate-list.article .cate-list--box .active {
-        color: #4caf50; } }
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 767px) {
     #cate .cate-list {
       padding-top: 1em;
       font-size: 13px;
@@ -107,6 +97,27 @@
       #cate .cate-list.article .cate-list--box .active {
         color: #fff;
         background-color: #4caf50; } }
+  @media screen and (min-width: 768px) and (max-width: 1000px) {
+    #cate .cate-list {
+      top: 8em; } }
+  @media screen and (min-width: 1001px) {
+    #cate .cate-list {
+      top: 11em; } }
+  @media screen and (min-width: 768px) {
+    #cate .cate-list {
+      width: 100%;
+      position: absolute;
+      left: 10px;
+      font-size: 15px; }
+      #cate .cate-list .cate-item {
+        border: 1px solid #fff;
+        color: #fff; }
+      #cate .cate-list.technology .cate-list--box .active {
+        color: #3f7fd5; }
+      #cate .cate-list.culture .cate-list--box .active {
+        color: #3eb25d; }
+      #cate .cate-list.article .cate-list--box .active {
+        color: #4caf50; } }
   #cate .post-list {
     display: flex;
     margin: 0 auto;
