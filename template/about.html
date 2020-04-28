@@ -49,4 +49,14 @@
     </article>
   </div>
 </div>
+<script src="//lib.baomitu.com/underscore.js/1.8.3/underscore-min.js"></script>
+<script>
+  var pictureList = window.pictureList;
+  var picItemEl = _.template(`
+    <% pictureList.forEach(function(item) { %>
+      <li><img src="<%=item.src%>" /></li>
+    <% }) %>`);
+  var picListEl = document.querySelector('#picture-list');
+  picListEl.innerHTML = picItemEl({ pictureList: pictureList });
+</script>
 {% endblock %}
