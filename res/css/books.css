@@ -17,28 +17,9 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap; }
-    @media screen and (min-width: 1200px) {
+    @media screen and (max-width: 575px) {
       #books .book-list {
-        width: 800px;
-        padding-bottom: 2em;
-        font-size: 16px; }
-        #books .book-list .book-item {
-          width: 250px;
-          margin-top: 25px;
-          margin-right: 25px;
-          transition-duration: 0.2s, 0.1s; }
-          #books .book-list .book-item img {
-            width: 100%;
-            height: 330px; }
-          #books .book-list .book-item:nth-child(3n + 3) {
-            margin-right: 0; }
-          #books .book-list .book-item:hover {
-            box-shadow: 0px 16px 48px -12px rgba(0, 0, 0, 0.2);
-            transform: scale(1.05);
-            transition-timing-function: ease-in; } }
-    @media screen and (max-width: 1200px) {
-      #books .book-list {
-        padding: 0.5em 1em;
+        padding: 0.5em 1.5em;
         font-size: 14px; }
         #books .book-list .book-item {
           width: 47.5%;
@@ -48,6 +29,35 @@
             margin-right: 0; }
           #books .book-list .book-item img {
             max-width: 100%; } }
+    @media screen and (min-width: 576px) {
+      #books .book-list {
+        padding-bottom: 2em;
+        font-size: 16px; }
+        #books .book-list .book-item {
+          width: 250px;
+          margin-top: 25px;
+          transition-duration: 0.2s, 0.1s; }
+          #books .book-list .book-item img {
+            width: 100%;
+            height: 330px; }
+          #books .book-list .book-item:hover {
+            box-shadow: 0px 16px 48px -12px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+            transition-timing-function: ease-in; } }
+    @media screen and (min-width: 576px) and (max-width: 900px) {
+      #books .book-list {
+        width: 525px;
+        padding-top: 1.5em; }
+        #books .book-list .book-item:nth-child(2n + 1) {
+          margin-right: 25px; } }
+    @media screen and (min-width: 901px) {
+      #books .book-list {
+        width: 800px;
+        padding-top: 2em; }
+        #books .book-list .book-item {
+          margin-right: 25px; }
+          #books .book-list .book-item:nth-child(3n + 3) {
+            margin-right: 0; } }
     #books .book-list .book-item {
       background: #fff;
       border-radius: 6px;
