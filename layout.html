@@ -71,9 +71,9 @@
           </a>
         </li>
         <li class="search">
-          <a class="so" href="so.com">360搜索</a>
-          <input type="text" placeholder="奇舞学院闹事情" />
-          <a class="search-btn" href="so.com">搜索</a>
+          <a class="so" href="https://www.so.com">360搜索</a>
+          <input class="so-query" type="text" placeholder="奇舞学院闹事情" />
+          <span class="search-btn">搜索</span>
         </li>
       </ul>
     </footer>
@@ -82,8 +82,12 @@
       data-ls="js_firekylin"
     ></script>
     <script src="//lib.baomitu.com/underscore.js/1.8.3/underscore-min.js"></script>
-
     <script>
+      document.querySelector('.search .search-btn').onclick = function () {
+        var queryEl = document.querySelector('.search .so-query');
+        var query = queryEl.value ? queryEl.value : queryEl.placeholder;
+        window.open(`https://www.so.com/s?q=${query}`, '_blank');
+      };
       var footerProducts = window.footerProducts;
       if (footerProducts) {
         var footerLinkEl = _.template(`

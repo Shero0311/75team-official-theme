@@ -82,7 +82,8 @@
     line-height: 34px;
     padding: 0 0.6em;
     background: #383838;
-    border-radius: 5px; }
+    border-radius: 5px;
+    cursor: pointer; }
   @media screen and (min-width: 901px) and (max-width: 1200px) {
     #footer ul {
       width: 900px;
