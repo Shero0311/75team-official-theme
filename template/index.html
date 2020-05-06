@@ -95,24 +95,6 @@
       </div>
     </a>
     {%- endmacro %}
-    <!-- 技术活动 -->
-    {% for cate in categories %} {% if cate.pathname =="technology" %}
-    <div class="title">
-      <h1>Technology Activity</h1>
-      <h2>
-        <a href="/cate/{{cate.pathname}}">
-          <span>{{ cate.name}}</span>
-          <img src="https://p2.ssl.qhimg.com/t017b9ba99fb40e5fdf.png" />
-        </a>
-      </h2>
-    </div>
-    <div class="module-tech list-box">
-      {% set actlist = cate.posts %}{% set actlen = cate.posts.length %} {% for activity
-      in actlist -%}{% if loop.index < 5%}
-      {{techList(JSON.parse(activity.options).featuredImage, activity.title,
-      activity.summary, activity.pathname, activity.create_time)}}{%endif%} {%- endfor %}
-    </div>
-    {% endif %} {% endfor %}
     <!-- 文化活动 -->
     {% for cate in categories %} {% if cate.pathname =="culture" %}
     <div class="title">
@@ -124,11 +106,28 @@
         </a>
       </h2>
     </div>
-    <div class="module module-cul">
+    <div class="module-cul list-box">
+      {% set actlist = cate.posts %} {% for activity in actlist -%}{% if loop.index < 3%}
+      {{techList(JSON.parse(activity.options).featuredImage, activity.title,
+      activity.summary, activity.pathname, activity.create_time)}} {%endif%}{%- endfor %}
+    </div>
+    {% endif %} {% endfor %}
+    <!-- 技术活动 -->
+    {% for cate in categories %} {% if cate.pathname =="technology" %}
+    <div class="title">
+      <h1>Technology Activity</h1>
+      <h2>
+        <a href="/cate/{{cate.pathname}}">
+          <span>{{ cate.name}}</span>
+          <img src="https://p2.ssl.qhimg.com/t017b9ba99fb40e5fdf.png" />
+        </a>
+      </h2>
+    </div>
+    <div class="module module-tech">
       <div class="list-box">
-        {% set actlist = cate.posts %} {% for activity in actlist -%}{% if loop.index <
+        {% set actlist = cate.posts %}{% for activity in actlist -%}{% if loop.index <
         4%} {{techList(JSON.parse(activity.options).featuredImage, activity.title,
-        activity.summary, activity.pathname, activity.create_time)}} {%endif%}{%- endfor
+        activity.summary, activity.pathname, activity.create_time)}}{%endif%} {%- endfor
         %}
       </div>
     </div>
