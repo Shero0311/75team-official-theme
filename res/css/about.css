@@ -96,7 +96,7 @@
     background-color: #fff;
     overflow: hidden; }
     #about #picture-list li {
-      margin: 0; }
+      margin-right: 5px; }
     #about #picture-list img {
       max-width: 100%; }
       @media screen and (max-width: 767px) {
@@ -148,8 +148,8 @@
         height: 30px; } }
     @media screen and (min-width: 1200px) {
       #about #mask img {
-        max-width: 100%;
-        max-height: 100%; }
+        max-width: 90%;
+        max-height: 90%; }
       #about #mask .previous {
         left: 3em; }
       #about #mask .next {
